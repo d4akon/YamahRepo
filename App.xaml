@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Yamah"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/ButtonTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/TitlebarButton.xaml"/>
+                <ResourceDictionary Source="/Themes/DataGridTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
