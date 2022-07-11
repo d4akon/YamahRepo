@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Yamah.Models;
+using Yamah.ViewModels;
 
 namespace Yamah.Views
 {
@@ -45,8 +47,8 @@ namespace Yamah.Views
                 if (check)
                 {
                     LoginViewModel.GetUserByEmailAsync(EmailBox.Text, connectionString);
-                    var menuWindow = new MenuWindow();
-                    menuWindow.Show();
+                    //var menuWindow = new MenuWindow();
+                    //menuWindow.Show();
                     this.Close();
                 }
                 else
