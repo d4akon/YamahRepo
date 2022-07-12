@@ -1,8 +1,5 @@
 ﻿using System.Windows;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Yamah.Core;
 using Yamah.Models;
 
