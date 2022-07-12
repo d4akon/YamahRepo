@@ -1,0 +1,125 @@
+﻿<Window x:Class="Yamah.Views.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel="clr-namespace:Yamah.ViewModels"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="600" Width="920"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResize"
+        MouseDown="MenuWindow_OnMouseDown">
+
+    <Window.DataContext>
+        <viewmodel:MenuViewModel/>
+    </Window.DataContext>
+
+    <DockPanel Background="#1E1E1E"
+               Margin="7">
+        <Border Height="28"
+                Background="#252525"
+                DockPanel.Dock="Top">
+
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding MoveWindowCommand}"/>
+            </Border.InputBindings>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="YamahCRUD"
+                           Foreground="LightGray"
+                           FontFamily="Consolas"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="100,0,0,0"/>
+
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,4,0">
+                    <Button Content="🗕"
+                            Padding="0,0,0,4"
+                            Command="{Binding MinimizeWindowCommand}"
+                            Style="{StaticResource BarButton}"/>
+                    <Button Content="🗖"
+                            Padding="0,0,0,2"
+                            Command="{Binding MaximizeWindowCommand}"
+                            Style="{StaticResource BarButton}"/>
+                    <Button Content="✕"
+                            Command="{Binding ShutdownWindowCommand}"
+                            Style="{StaticResource BarButton}"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+        <Border Width="200"
+                HorizontalAlignment="Left"
+                Background="#252525">
+
+            <StackPanel >
+                <RadioButton Content="Tasks"
+                             x:Name="TasksButton"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="TasksButton_OnClick"/>
+
+                <RadioButton Content="Users"
+                             x:Name="UsersButton"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="UsersButton_OnClick"/>
+
+                <RadioButton Content="Add new task"
+                             x:Name="AddNewTaskButton"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="AddNewTaskButton_OnClick"/>
+
+                <Label
+                    Margin="0,270,0,0"
+                    Content="Welcome"
+                    FontSize="18"
+                    Foreground="White"
+                    HorizontalContentAlignment="Center"/>
+
+                <Label
+                    Content="{Binding User.Username}"
+                    FontSize="20"
+                    Foreground="NavajoWhite"
+                    HorizontalContentAlignment="Center"/>
+
+                <RadioButton
+                    x:Name="LogoutButton"
+                    Click="LogoutButton_OnClick"
+                    Content="Logout"
+                    FontWeight="Bold"
+                    Foreground="PapayaWhip"
+                    FontSize="18"
+                    Margin="20, 20 0 0"
+                    Style="{StaticResource MenuButtonTheme}"
+                    />
+            </StackPanel>
+
+        </Border>
+
+        <Frame
+            x:Name="Main" NavigationUIVisibility="Hidden">
+        </Frame>
+
+    </DockPanel>
+</Window>
