@@ -47,8 +47,8 @@ namespace Yamah.Views
                 if (check)
                 {
                     LoginViewModel.GetUserByEmailAsync(EmailBox.Text, connectionString);
-                    //var menuWindow = new MenuWindow();
-                    //menuWindow.Show();
+                    var menuWindow = new MenuWindow();
+                        menuWindow.Show();
                     this.Close();
                 }
                 else
