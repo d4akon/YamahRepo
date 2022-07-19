@@ -63,5 +63,10 @@ namespace Yamah.Views
                 this.Close();
             }
         }
+
+        private void CancelButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

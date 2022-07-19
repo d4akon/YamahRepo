@@ -5,33 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Yamah.Views"
         mc:Ignorable="d"
-        Title="AddNewTaskWindow" Height="250" Width="400"
-        Background="#1E1E1E">
+        Title="AddNewTaskWindow"
+        MinHeight="350" MinWidth="500"
+        Height="350" Width="500"
+        MaxHeight="350" MaxWidth="500"
+        WindowState="Normal"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E"
+        ResizeMode="NoResize">
     <Grid>
         <StackPanel VerticalAlignment="Top">
-            <TextBlock Text="Title" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Text="Title" Foreground="White" FontWeight="Bold" Margin="10 5 0 5"/>
             <TextBox
                 x:Name="TitleBox"
-                Text="Title"
                 Background="Black"
-                Foreground="White"/>
-            <TextBlock Text="Description" Foreground="White" FontWeight="Bold"/>
+                Foreground="White"
+                HorizontalContentAlignment="Left"
+                VerticalContentAlignment="Center"
+                Height="30"
+                Margin="4 0 4 0"/>
+            <TextBlock Text="Description" Foreground="White" FontWeight="Bold" Margin="10 5 0 5"/>
             <TextBox
                 x:Name="DescriptionBox"
-                Text="Description"
                 Background="Black"
-                Foreground="White"/>
-            <TextBlock Text="Priority" Foreground="White" FontWeight="Bold"/>
-            <ComboBox x:Name="PriorityBox" Background="Transparent">
+                Foreground="White"
+                HorizontalContentAlignment="Left"
+                VerticalContentAlignment="Center"
+                Height="30"
+                Margin="4 0 4 5"/>
+            <TextBlock Text="Priority" Foreground="White" FontWeight="Bold" Margin="10 5 0 5" HorizontalAlignment="Center" FontSize="18"/>
+            <ComboBox x:Name="PriorityBox" Background="Transparent" HorizontalAlignment="Center" Width="200">
                 <ComboBoxItem Content="Low"/>
                 <ComboBoxItem Content="Regular"/>
                 <ComboBoxItem Content="High"/>
             </ComboBox>
-            <TextBlock Text="Assigned User" Foreground="White" FontWeight="Bold"/>
-            <ComboBox x:Name="AssignedUserBox" Background="Transparent">
+            <TextBlock Text="Assigned User" Foreground="White" FontWeight="Bold" Margin="10 5 0 5" HorizontalAlignment="Center" FontSize="18"/>
+            <ComboBox x:Name="AssignedUserBox" Background="Transparent" HorizontalAlignment="Center" Width="200">
             </ComboBox>
 
-            <Button x:Name="SaveButton" Margin="0 30 0 0" Content="Add" Click="SaveButton_OnClick"/>
+            <Button x:Name="SaveButton" Background="ForestGreen" Height="40" Margin="280 25 120 0" Content="Add" Click="SaveButton_OnClick" Style="{StaticResource LoginWindowButton}"/>
+            <Button x:Name="CancelButton" Background="Red" Height="40" Margin="120 -40 280 0" Content="Cancel" Click="CancelButton_OnClick" Style="{StaticResource LoginWindowButton}"/>
         </StackPanel>
     </Grid>
 </Window>
