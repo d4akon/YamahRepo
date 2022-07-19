@@ -66,7 +66,7 @@ namespace Yamah.Views
 
         private void CancelButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
         }
     }
 }
